@@ -63,3 +63,145 @@ a {
   max-width: 100%;
   height: auto;
 }
+
+.gallery-img {
+  position: relative;
+  z-index: 1;
+  overflow: hidden
+}
+
+.gallery-img > img {
+  width: 100%;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+
+.single_gallery_item:hover .gallery-img > img {
+  -webkit-transform: scale(1.15);
+  transform: scale(1.15);
+}
+
+.gallery-img .product-quicview {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: rgba(23, 24, 24, 0.6);
+  opacity: 0;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+}
+
+.gallery-img:hover .gallery-quicview {
+  opacity: 1;
+}
+
+.gallery .gallery-quicview > a {
+  width: 72px;
+  height: 72px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 36px;
+  line-height: 72px;
+}
+
+.gallery-img .product-quicview > a:hover {
+  border: 2px solid rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+#caption {
+  margin: auto;
+  display: none;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+.modal-content, #caption {
+  -webkit-animation-name: zoomIn;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoomIn;
+  animation-duration: 0.6s;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@-webkit-keyframes zoomIn {
+  from {
+      -webkit-transform: scale(0)
+  }
+
+  to {
+      -webkit-transform: scale(1)
+  }
+}
+
+@keyframes zoomIn {
+  from {
+      transform: scale(0)
+  }
+
+  to {
+      transform: scale(1)
+  }
+}
+
+.myImg {
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
